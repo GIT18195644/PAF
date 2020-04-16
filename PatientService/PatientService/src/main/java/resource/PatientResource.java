@@ -62,20 +62,20 @@ public class PatientResource {
 	
 		
 	//Update Patient
-	//@PUT
-	//@Path("update")
-	//public Patient updatePatient(Patient p1) {
-		//System.out.println(p1);
+	@PUT
+	@Path("update")
+	public Patient updatePatient(Patient p1) {
+		System.out.println(p1);
 			
-	//if (prepo.getPatient(p1.getPatient_id()).getPatient_id()==0) {
-	//System.out.println("DB have no details in this patient id");
-	//}
-	//else {
-		//prepo.update(p1);
-		//}
+	if (prepo.getPatient(p1.getPatient_id()).getPatient_id()==0) {
+	System.out.println("DB have no details in this patient id");
+	}
+	else {
+		prepo.update(p1);
+		}
 			
-		//return p1;
-	//}
+		return p1;
+	}
 	
 	//Deactivate account
 	//@DELETE
