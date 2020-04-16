@@ -14,19 +14,19 @@ import javax.ws.rs.core.MediaType;
 import model.Patient;
 import repository.PatientRepository;
 
-//@Path("patients")
-//public class PatientResource {
+@Path("patients")
+public class PatientResource {
 	
-	//PatientRepository prepo = new PatientRepository();
+	PatientRepository prepo = new PatientRepository();
 	
 	//View Patient details
-	//@GET
-	//@Produces(MediaType.APPLICATION_JSON)
-	//public List<Patient> getPatients(){
-		//System.out.println("get patients...");
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Patient> getPatients(){
+		System.out.println("get patients...");
 		
-		//return prepo.getPatients();
-	//}
+		return prepo.getPatients();
+	}
 	
 //	//View own account details
 //	@GET

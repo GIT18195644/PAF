@@ -28,37 +28,37 @@ public class PatientRepository {
 	}
 	
 
-	//public List<Patient> getPatients() {
+	public List<Patient> getPatients() {
 		
-		//List<Patient> patients = new ArrayList<>();
+		List<Patient> patients = new ArrayList<>();
 		
-		//String sql = "SELECT * FROM patientmanagement";
+		String sql = "SELECT * FROM patientmanagement";
 		
-		//try {
-			//Statement st = con.createStatement();
-			//ResultSet rs = st.executeQuery(sql);
+		try {
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql);
 			
-			//while (rs.next()) {
-				//Patient p = new Patient();
+			while (rs.next()) {
+				Patient p = new Patient();
 				
-				//p.setPatient_id(rs.getInt(1));
-				//p.setName(rs.getString(2));
-				//p.setGender(rs.getString(3));
-				//p.setBirthday(rs.getDate(4));
-				//p.setNic(rs.getString(5));
-				//p.setPhone(rs.getString(6));
-				//p.setUsername(rs.getString(7));
-				//p.setPassword(rs.getString(8));
+				p.setPatient_id(rs.getInt(1));
+				p.setName(rs.getString(2));
+				p.setGender(rs.getString(3));
+				p.setBirthday(rs.getDate(4));
+				p.setNic(rs.getString(5));
+				p.setPhone(rs.getString(6));
+				p.setUsername(rs.getString(7));
+				p.setPassword(rs.getString(8));
 				
-				//patients.add(p);
+				patients.add(p);
 				
-			//}
-		//} catch (Exception e) {
-			//System.out.println(e);
-		//}
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 		
-		//return patients;
-	//}
+		return patients;
+	}
 
 
 	//public Patient getPatient(int patient_id) {
