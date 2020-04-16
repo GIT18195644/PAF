@@ -4,6 +4,8 @@ PAF Project
 # PAF-API
 API PROJECT
 
+Import Project in Eclipse.:
+Choose your service only
 
 #DataBase : Xampp - PhpmyAdmin
 
