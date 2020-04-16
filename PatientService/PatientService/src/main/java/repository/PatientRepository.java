@@ -89,29 +89,29 @@ public class PatientRepository {
 	}
 
 
-	//public void create(Patient p1) {
+	public void create(Patient p1) {
 		
-		//String sql = "INSERT INTO patientmanagement VALUES (?,?,?,?,?,?,?,?) ";
+		String sql = "INSERT INTO patientmanagement VALUES (?,?,?,?,?,?,?,?) ";
 		
-		//try {
-			//PreparedStatement st = con.prepareStatement(sql);
+		try {
+			PreparedStatement st = con.prepareStatement(sql);
 			
-			//st.setInt(1, p1.getPatient_id());
-			//st.setString(2, p1.getName());
-			//st.setString(3,  p1.getGender());
-			//st.setDate(4, p1.getBirthday());
-			//st.setString(5, p1.getNic());
-			//st.setString(6,  p1.getPhone());
-			//st.setString(7, p1.getUsername());
-			//st.setString(8,  p1.getPassword());
+			st.setInt(1, p1.getPatient_id());
+			st.setString(2, p1.getName());
+			st.setString(3,  p1.getGender());
+			st.setDate(4, p1.getBirthday());
+			st.setString(5, p1.getNic());
+			st.setString(6,  p1.getPhone());
+			st.setString(7, p1.getUsername());
+			st.setString(8,  p1.getPassword());
 			
-			//st.executeUpdate();
+			st.executeUpdate();
 			
-		//} catch (Exception e) {
-			//System.out.println(e);
-		//}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 		
-	//}
+	}
 
 
 	//public void update(Patient p1) {

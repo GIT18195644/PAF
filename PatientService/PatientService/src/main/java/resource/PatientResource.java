@@ -51,14 +51,14 @@ public class PatientResource {
 	}
 	
 	//Create patient
-	//@POST
-	//@Path("create")
-	//public Patient createPatient(Patient p1) {
-		//System.out.println(p1);
-		//prepo.create(p1);
+	@POST
+	@Path("create")
+	public Patient createPatient(Patient p1) {
+		System.out.println(p1);
+		prepo.create(p1);
 			
-		//return p1;
-	//}
+		return p1;
+	}
 	
 		
 	//Update Patient
