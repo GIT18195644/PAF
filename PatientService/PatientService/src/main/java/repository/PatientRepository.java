@@ -139,20 +139,20 @@ public class PatientRepository {
 	}
 
 
-	//public void delete(int patient_id) {
-		//String sql = "DELETE FROM patientmanagement WHERE Patient_id=?";
+	public void delete(int patient_id) {
+		String sql = "DELETE FROM patientmanagement WHERE Patient_id=?";
 		
-		//try {
-			//PreparedStatement st = con.prepareStatement(sql);
+		try {
+			PreparedStatement st = con.prepareStatement(sql);
 			
-			//st.setInt(1, patient_id);
+			st.setInt(1, patient_id);
 			
-			//st.executeUpdate();
+			st.executeUpdate();
 			
-		//} catch (Exception e) {
-			//System.out.println(e);
-		//}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 		
-	//}
+	}
 
 }

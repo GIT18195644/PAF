@@ -78,18 +78,18 @@ public class PatientResource {
 	}
 	
 	//Deactivate account
-	//@DELETE
-	//@Path("deactivate/{Patient_id}")
-	//public Patient deactivateAccount(@PathParam("Patient_id") int Patient_id) {
-		//Patient p = prepo.getPatient(Patient_id);
+	@DELETE
+	@Path("deactivate/{Patient_id}")
+	public Patient deactivateAccount(@PathParam("Patient_id") int Patient_id) {
+		Patient p = prepo.getPatient(Patient_id);
 		
-		//if (p.getPatient_id() !=0) {
-			//prepo.delete(Patient_id);
-		//}
+		if (p.getPatient_id() !=0) {
+			prepo.delete(Patient_id);
+		}
 		
-		//return p;
+		return p;
 		
-	//}
+	}
 	
 }
 
