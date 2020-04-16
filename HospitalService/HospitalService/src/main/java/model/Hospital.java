@@ -50,9 +50,5 @@ public class Hospital {
 		return "Hospital [Hospital_id=" + Hospital_id + ", Hospital_name=" + Hospital_name + ", Hospital_location="
 				+ Hospital_location + ", Register_no=" + Register_no + ", Email=" + Email + ", Phone=" + Phone + "]";
 	}
-<<<<<<< HEAD
-		
-=======
-	
->>>>>>> dinuka
+
 }
