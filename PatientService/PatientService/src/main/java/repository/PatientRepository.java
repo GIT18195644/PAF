@@ -61,32 +61,32 @@ public class PatientRepository {
 	}
 
 
-	//public Patient getPatient(int patient_id) {
+	public Patient getPatient(int patient_id) {
 		
-		//String sql = "SELECT * FROM patientmanagement WHERE Patient_id="+patient_id;
-		//Patient p = new Patient();
+		String sql = "SELECT * FROM patientmanagement WHERE Patient_id="+patient_id;
+		Patient p = new Patient();
 		
-		//try {
-			//Statement st = con.createStatement();
-			//ResultSet rs = st.executeQuery(sql);
+		try {
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql);
 			
-			//if (rs.next()) {
-				//p.setPatient_id(rs.getInt(1));
-				//p.setName(rs.getString(2));
-				//p.setGender(rs.getString(3));
-				//p.setBirthday(rs.getDate(4));
-				//p.setNic(rs.getString(5));
-				//p.setPhone(rs.getString(6));
-				//p.setUsername(rs.getString(7));
-				//p.setPassword(rs.getString(8));
-			//}
+			if (rs.next()) {
+				p.setPatient_id(rs.getInt(1));
+				p.setName(rs.getString(2));
+				p.setGender(rs.getString(3));
+				p.setBirthday(rs.getDate(4));
+				p.setNic(rs.getString(5));
+				p.setPhone(rs.getString(6));
+				p.setUsername(rs.getString(7));
+				p.setPassword(rs.getString(8));
+			}
 			
-		//} catch (Exception e) {
-			//System.out.println(e);
-		//}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 		
-		//return p;
-	//}
+		return p;
+	}
 
 
 	//public void create(Patient p1) {

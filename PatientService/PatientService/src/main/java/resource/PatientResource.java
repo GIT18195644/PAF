@@ -41,14 +41,14 @@ public class PatientResource {
 //	}
 	
 	//Search patient using patient id
-	//@GET
-	//@Path("search/{Patient_id}")
-	//@Produces(MediaType.APPLICATION_JSON)
-	//public Patient getPatient(@PathParam("Patient_id") int Patient_id) {
+	@GET
+	@Path("search/{Patient_id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Patient getPatient(@PathParam("Patient_id") int Patient_id) {
 		
-		//return prepo.getPatient(Patient_id);
+		return prepo.getPatient(Patient_id);
 		
-	//}
+	}
 	
 	//Create patient
 	//@POST
