@@ -61,93 +61,99 @@ public class PatientResource {
 		return p1;
 	}
 
-	// create Appointment
-	@POST
-	@Path("createappointment")
-	public Appointment createAppointment(Appointment a1) {
-		System.out.println(a1);
-		prepo.createAppointment(a1);
-
-		return a1;
-	}
-
-	// create payment for appointment
-	@POST
-	@Path("createpayment")
-	public Appointment createPaymentAppointment(Appointment a1) {
-		System.out.println(a1);
-		prepo.createPaymentAppointment(a1);
-
-		return a1;
-	}
-
+	
 	// Update Patient
-	//@PUT
-	//@Path("update")
-	//public Patient updatePatient(Patient p1) {
-		//System.out.println(p1);
+	@PUT
+	@Path("update")
+	public Patient updatePatient(Patient p1) {
+		System.out.println(p1);
 
-		//if (prepo.getPatient(p1.getPatient_id()).getPatient_id() == 0) {
-			//System.out.println("DB have no details in this patient id");
-		//} else {
-			//prepo.update(p1);
-		//}
+		if (prepo.getPatient(p1.getPatient_id()).getPatient_id() == 0) {
+			System.out.println("DB have no details in this patient id");
+		} else {
+			prepo.update(p1);
+		}
 
-		//return p1;
-	//}
+		return p1;
+	}
 
-	// Update Appointment
-	//@PUT
-	//@Path("updateAppointment")
-	//public Appointment updateAppointment(Appointment a1) {
-		//System.out.println(a1);
-
-		//if (prepo.getAppointmentAdmin(a1.getAppointment_id()).getAppointment_id() == 0) {
-			//System.out.println("DB have no details in this id");
-		//} else {
-			//prepo.updateAppointment(a1);
-		//}
-
-		//return a1;
-	//}
+	
 
 	// Deactivate account
-	//@DELETE
-	//@Path("deactivate/{Patient_id}")
-	//public Patient deactivateAccount(@PathParam("Patient_id") int Patient_id) {
-		//Patient p = prepo.getPatient(Patient_id);
+	@DELETE
+	@Path("deactivate/{Patient_id}")
+	public Patient deactivateAccount(@PathParam("Patient_id") int Patient_id) {
+		Patient p = prepo.getPatient(Patient_id);
 
-		//if (p.getPatient_id() != 0) {
-			//prepo.delete(Patient_id);
+		if (p.getPatient_id() != 0) {
+			prepo.delete(Patient_id);
+		}
+
+		return p;
+
+	}
+	
+	// create Appointment
+		@POST
+		@Path("createappointment")
+		public Appointment createAppointment(Appointment a1) {
+			System.out.println(a1);
+			prepo.createAppointment(a1);
+
+			return a1;
+		}
+
+		// create payment for appointment
+		@POST
+		@Path("createpayment")
+		public Appointment createPaymentAppointment(Appointment a1) {
+			System.out.println(a1);
+			prepo.createPaymentAppointment(a1);
+
+			return a1;
+		}
+
+	
+	
+	// Update Appointment
+		//@PUT
+		//@Path("updateAppointment")
+		//public Appointment updateAppointment(Appointment a1) {
+			//System.out.println(a1);
+
+			//if (prepo.getAppointmentAdmin(a1.getAppointment_id()).getAppointment_id() == 0) {
+				//System.out.println("DB have no details in this id");
+			//} else {
+				//prepo.updateAppointment(a1);
+			//}
+
+			//return a1;
 		//}
-
-		//return p;
-
-	//}
+		
 
 	// Search appointments using appointment id
-	//@GET
-	//@Path("searchappointment/{appointment_id}")
-	//@Produces(MediaType.APPLICATION_JSON)
-	//public Appointment getAppointmentAdmin(@PathParam("appointment_id") int appointment_id) {
+	@GET
+	@Path("searchappointment/{appointment_id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Appointment getAppointmentAdmin(@PathParam("appointment_id") int appointment_id) {
 
-		//return prepo.getAppointmentAdmin(appointment_id);
+		return prepo.getAppointmentAdmin(appointment_id);
 
-	//}
+	}
 
-	// Delete Appointment
-	//@DELETE
-	//@Path("deleteappointment/{Patient_id}/{appointment_id}")
-	//public Appointment deleteAppointmentPatient(@PathParam("Patient_id") int Patient_id,
-			//@PathParam("appointment_id") int appointment_id) {
+	 //Delete Appointment
+	@DELETE
+	@Path("deleteappointment/{Patient_id}/{appointment_id}")
+	public Appointment deleteAppointmentPatient(@PathParam("Patient_id") int Patient_id,
+			@PathParam("appointment_id") int appointment_id) {
 
-		//Appointment a = prepo.getAppointmentAdmin(appointment_id);
+		Appointment a = prepo.getAppointmentAdmin(appointment_id);
 
-		//if (a.getPatient_id() != 0 && a.getAppointment_id() != 0) {
-			//prepo.deleteAppointment(Patient_id, appointment_id);
-		//}
+		if (a.getPatient_id() != 0 && a.getAppointment_id() != 0) {
+			prepo.deleteAppointment(Patient_id, appointment_id);
+		}
 
-		//return a;
-	//}
+		return a;
+	}
 
 }
