@@ -31,7 +31,7 @@ public class DoctorRepository {
 
 	public void create(Doctor d) {
 
-		String sql = "INSERT INTO doctormanagement VALUES (?,?,?,?,?,?,?,?";
+		String sql = "INSERT INTO doctormanagement VALUES (?,?,?,?,?,?,?,?)";
 
 		try {
 			PreparedStatement st = con.prepareStatement(sql);
