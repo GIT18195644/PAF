@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import model.Appointment;
 import model.Patient;
 
 public class PatientRepository {
@@ -151,6 +152,34 @@ public class PatientRepository {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
+		
+	}
+
+
+	public void createAppointment(Appointment a1) {
+		String sql = "INSERT INTO appointmentmanagement(appointment_id, Appointment_type, Appointment_date, Appointment_time, Appointment_fees, Patient_id, Hospital_id, Doctor_id) VALUES (?,?,?,?,?,?,?,?)";
+
+		try {
+			PreparedStatement st = con.prepareStatement(sql);
+
+			st.setInt(1, a1.getAppointment_id());
+			st.setInt(2, a1.getAppointment_type());
+			st.setString(3, a1.getAppointment_date());
+			st.setString(4, a1.getAppointment_time());
+			st.setString(5, a1.getAppointment_fees());
+			st.setInt(6, a1.getPatient_id());
+			st.setInt(7, a1.getHospital_id());
+			st.setInt(8, a1.getDoctor_id());
+
+			st.executeUpdate();
+		} catch (Exception e2) {
+			System.out.println(e2);
+		}
+	}
+
+
+	public void createPaymentAppointment(Appointment a1) {
+		// TODO Auto-generated method stub
 		
 	}
 

@@ -90,7 +90,12 @@ th, td {
 			<td><input type="text" value="http://localhost:8080/PatientService/webapi/patients/update" id="myInput5"></td>
 			<td><button class="button button3" onclick="myFunction5()">Get Link</button></td>
 		</tr>
-		
+		<tr>
+			<td>POST</td>
+			<td>Create Appointment - (Patient)</td>
+			<td><input type="text" value="http://localhost:8080/PatientService/webapi/patients/createappointment" id="myInput6"></td>
+			<td><button class="button button3" onclick="myFunction6()">Get Link</button></td>
+		</tr>
 	</table>
 
 	<script>
@@ -134,7 +139,13 @@ th, td {
 			alert("Copied the Clipboard");
 		}
 		
-		
+		function myFunction6() {
+			var copyText = document.getElementById("myInput6");
+			copyText.select();
+			copyText.setSelectionRange(0, 99999)
+			document.execCommand("copy");
+			alert("Copied the Clipboard");
+		}
 	</script>
 
 </body>
