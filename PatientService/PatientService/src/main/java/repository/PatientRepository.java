@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
 import model.Patient;
 
 public class PatientRepository {
@@ -91,7 +90,7 @@ public class PatientRepository {
 
 	public void create(Patient p1) {
 		
-		String sql = "INSERT INTO patientmanagement VALUES (?,?,?,?,?,?,?,?) ";
+		String sql = "INSERT INTO patientmanagement VALUES (?,?,?,?,?,?,?,?)";
 		
 		try {
 			PreparedStatement st = con.prepareStatement(sql);
@@ -107,8 +106,8 @@ public class PatientRepository {
 			
 			st.executeUpdate();
 			
-		} catch (Exception e) {
-			System.out.println(e);
+		} catch (Exception e2) {
+			System.out.println(e2);
 		}
 		
 	}
