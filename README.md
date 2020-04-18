@@ -8,15 +8,9 @@ API PROJECT
 #DataBase : Xampp - PhpmyAdmin
 
 First of all you must create databse in phpmyadmin. The databse name is "ayurwedha"
-You must create tables in this type;
 
-Eg 1: Service is hospital management system. then you create your table name is "hospitalmanagement"
-
-Eg 2: Service is appointment management system. then you create your table name is "appointmentmanagement"
-
-#DB File Updated
 Download the zip file and import to ayurwedha database:
-http://download1490.mediafire.com/efb66rb4srcg/f8757zbmlwj7eg6/ayurwedha.zip
+http://www.mediafire.com/file/htvw3gibwb5wj5w/ayurwedha.zip/file
 
 How to import sql file into phpmyadmin:
 1) Create DB 
