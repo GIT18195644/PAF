@@ -22,6 +22,7 @@ public class DoctorRepository {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = (Connection) DriverManager.getConnection(dbURL, dbUsername, dbPassword);
+			System.out.println("connected");
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -29,20 +30,22 @@ public class DoctorRepository {
 
 	public void create(Doctor d) {
 
-		String sql = "INSERT INTO hospitalmanagement VALUES (?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO doctormanagement VALUES (?,?,?,?,?,?,?,?";
 
 		try {
 			PreparedStatement st = con.prepareStatement(sql);
 
-			st.setInt(1, d.getDoctorID());
-			st.setString(2, d.getFname());
-			st.setString(3, d.getLname());
-			st.setString(4, d.getSpecialization());
-			st.setString(5, d.getEmail());
-			st.setString(6, d.getNic());
-			st.setInt(7, d.getPhone());
+			st.setInt(1, d.getDoctor_id());
+			st.setString(2, d.getDoctor_name());
+			st.setInt(3, d.getSpecialization());
+			st.setInt(4, d.getHospital_id());
+			st.setString(5, d.getNIC());
+			st.setString(6, d.getEmail());
+			st.setString(7, d.getPhone());
+			st.setString(8, d.getPassword());
 
 			st.executeUpdate();
+			System.out.println("one row inserted...");
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -52,7 +55,7 @@ public class DoctorRepository {
 
 		List<Doctor> doctor = new ArrayList<>();
 
-		String sql = "SELECT * FROM hospitalmanagement";
+		String sql = "SELECT * FROM doctormanagement";
 
 		try {
 			Statement st = con.createStatement();
@@ -60,13 +63,14 @@ public class DoctorRepository {
 
 			while (rs.next()) {
 				Doctor d = new Doctor();
-				d.setDoctorID(rs.getInt(1));
-				d.setFname(rs.getString(2));
-				d.setLname(rs.getString(3));
-				d.setEmail(rs.getString(4));
-				d.setSpecialization(rs.getString(5));
-				d.setNic(rs.getString(6));
-				d.setPhone(rs.getInt(7));
+				d.setDoctor_id(rs.getInt(1));
+				d.setDoctor_name(rs.getString(2));
+				d.setSpecialization(rs.getInt(3));
+				d.setHospital_id(rs.getInt(4));
+				d.setNIC(rs.getString(5));
+				d.setEmail(rs.getString(6));
+				d.setPhone(rs.getString(7));
+				d.setPassword(rs.getString(8));
 
 				doctor.add(d);
 			}
@@ -75,22 +79,52 @@ public class DoctorRepository {
 		}
 		return doctor;
 	}
+	
+	public Doctor searchDoctor(int id) {
+
+		String sql = "SELECT * FROM doctormanagement where Doctor_id = " + id;
+		Doctor d = new Doctor();
+
+		try {
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql);
+
+			while (rs.next()) {
+				d.setDoctor_id(rs.getInt(1));
+				d.setDoctor_name(rs.getString(2));
+				d.setSpecialization(rs.getInt(3));
+				d.setHospital_id(rs.getInt(4));
+				d.setNIC(rs.getString(5));
+				d.setEmail(rs.getString(6));
+				d.setPhone(rs.getString(7));
+				d.setPassword(rs.getString(8));
+
+				
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return d;
+	}
 
 	public void update(Doctor d) {
 
-		String sql = "UPDATE hospitalmanagement SET Hospital_name=?, Hospital_location=?, Register_no=?, Email=?, Phone=? WHERE Hospital_id=?";
+		String sql = "UPDATE doctormanagement SET Doctor_name=?, Specialization=?, Hospital_id=?, NIC=?, Email=?, Phone=?, Password=? WHERE Doctor_id=?";
 
 		try {
 			PreparedStatement st = con.prepareStatement(sql);
 
-			st.setString(1, d.getFname());
-			st.setString(2, d.getLname());
-			st.setString(3, d.getSpecialization());
-			st.setString(4, d.getNic());
+			st.setString(1, d.getDoctor_name());
+			st.setInt(2, d.getSpecialization());
+			st.setInt(3, d.getHospital_id());
+			st.setString(4, d.getNIC());
 			st.setString(5, d.getEmail());
-			st.setInt(6, d.getPhone());
-
+			st.setString(6, d.getPhone());
+			st.setString(7, d.getPassword());
+			st.setInt(8, d.getDoctor_id());
 			st.executeUpdate();
+			
+			System.out.println("one row updated...");
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -98,7 +132,7 @@ public class DoctorRepository {
 	}
 
 	public void delete(int id) {
-		String sql = "DELETE FROM hospitalmanagement WHERE Hospital_id=?";
+		String sql = "DELETE FROM doctormanagement WHERE doctor_ID=?";
 
 		try {
 			PreparedStatement st = con.prepareStatement(sql);
@@ -106,6 +140,8 @@ public class DoctorRepository {
 			st.setInt(1, id);
 
 			st.executeUpdate();
+			
+			System.out.println("one row deleted...");
 		} catch (Exception e) {
 			System.out.println(e);
 		}

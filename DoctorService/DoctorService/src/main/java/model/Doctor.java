@@ -1,62 +1,72 @@
 package model;
 
+
 public class Doctor {
-	private int doctorID;
-	private String fname;
-	private String lname;
-	private String specialization;
-	private String email;
-	private String nic;
-	private int phone;
+	private int Doctor_id;
+	private String Doctor_name;
+	private int Specialization;
+	private int Hospital_id;
+	private String NIC ;
+	private String Email ;
+	private String Phone ;
+	private String Password  ;
 	
-	
-	public int getDoctorID() {
-		return doctorID;
+	public int getDoctor_id() {
+		return Doctor_id;
 	}
-	public void setDoctorID(int doctorID) {
-		this.doctorID = doctorID;
+	public void setDoctor_id(int doctor_id) {
+		Doctor_id = doctor_id;
 	}
-	public String getNic() {
-		return nic;
+	public String getDoctor_name() {
+		return Doctor_name;
 	}
-	public void setNic(String nic) {
-		this.nic = nic;
+	public void setDoctor_name(String doctor_name) {
+		Doctor_name = doctor_name;
 	}
-	public String getFname() {
-		return fname;
+	public int getSpecialization() {
+		return Specialization;
 	}
-	public void setFname(String fname) {
-		this.fname = fname;
+	public void setSpecialization(int specialization) {
+		Specialization = specialization;
 	}
-	public String getLname() {
-		return lname;
+	public int getHospital_id() {
+		return Hospital_id;
 	}
-	public void setLname(String lname) {
-		this.lname = lname;
+	public void setHospital_id(int hospital_id) {
+		Hospital_id = hospital_id;
 	}
-	public String getSpecialization() {
-		return specialization;
+	public String getNIC() {
+		return NIC;
 	}
-	public void setSpecialization(String specialization) {
-		this.specialization = specialization;
-	}
-	public int getPhone() {
-		return phone;
-	}
-	public void setPhone(int phone) {
-		this.phone = phone;
+	public void setNIC(String nIC) {
+		NIC = nIC;
 	}
 	public String getEmail() {
-		return email;
+		return Email;
 	}
 	public void setEmail(String email) {
-		this.email = email;
+		Email = email;
+	}
+	public String getPhone() {
+		return Phone;
+	}
+	public void setPhone(String phone) {
+		Phone = phone;
+	}
+	public String getPassword() {
+		return Password;
+	}
+	public void setPassword(String password) {
+		Password = password;
 	}
 	@Override
 	public String toString() {
-		return "Doctor [doctorID=" + doctorID + ", fname=" + fname + ", lname=" + lname + ", specialization="
-				+ specialization + ", email=" + email + ", nic=" + nic + ", phone=" + phone + "]";
+		return "Doctor [Doctor_id=" + Doctor_id + ", Doctor_name=" + Doctor_name + ", Specialization=" + Specialization
+				+ ", Hospital_id=" + Hospital_id + ", NIC=" + NIC + ", Email=" + Email + ", Phone=" + Phone
+				+ ", Password=" + Password + "]";
 	}
+	
+	
 	
 	
 }
