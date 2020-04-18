@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Appointment;
 import model.Doctor;
 
 public class DoctorRepository {
@@ -146,5 +147,36 @@ public class DoctorRepository {
 			System.out.println(e);
 		}
 	}
+	
+	public List<Appointment> viewAppointment(int id){
+		
+		List<Appointment> appointments = new ArrayList<>();
+		String sql = "SELECT * FROM appointmentmanagement where Doctor_id = " + id;
+		
+
+		try {
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql);
+
+			while (rs.next()) {
+				Appointment a = new Appointment();
+				
+				a.setAppointment_id(rs.getInt(1));
+				a.setAppointment_type(rs.getInt(2));
+				a.setAppointment_date(rs.getString(3));
+				a.setAppointment_time(rs.getString(4));
+				a.setAppointment_fees(rs.getString(5));
+				a.setPatient_id(rs.getInt(6));
+				a.setHospital_id(rs.getInt(7));
+				a.setDoctor_id(rs.getInt(8));
+				
+				appointments.add(a);
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return appointments;
+	}
+	
 
 }

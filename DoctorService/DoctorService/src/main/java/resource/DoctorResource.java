@@ -1,6 +1,7 @@
 package resource;
 import java.util.List;
 
+import javax.annotation.Generated;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -9,6 +10,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
+import model.Appointment;
 import model.Doctor;
 import repository.DoctorRepository;
 
@@ -61,6 +64,14 @@ public class DoctorResource {
 			dr.delete(doctorID);
 		}
 		return d;
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("appointment/{doctorID}")
+	public List<Appointment> viewAppointment(@PathParam("doctorID")int doctorID) {
+		
+		return dr.viewAppointment(doctorID);
 	}
 	
 }
