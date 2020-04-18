@@ -116,19 +116,19 @@ public class PatientResource {
 	
 	
 	// Update Appointment
-		//@PUT
-		//@Path("updateAppointment")
-		//public Appointment updateAppointment(Appointment a1) {
-			//System.out.println(a1);
+		@PUT
+		@Path("updateAppointment")
+		public Appointment updateAppointment(Appointment a1) {
+			System.out.println(a1);
 
-			//if (prepo.getAppointmentAdmin(a1.getAppointment_id()).getAppointment_id() == 0) {
-				//System.out.println("DB have no details in this id");
-			//} else {
-				//prepo.updateAppointment(a1);
-			//}
+			if (prepo.getAppointmentAdmin(a1.getAppointment_id()).getAppointment_id() == 0) {
+				System.out.println("DB have no details in this id");
+			} else {
+				prepo.updateAppointment(a1);
+			}
 
-			//return a1;
-		//}
+			return a1;
+		}
 		
 
 	// Search appointments using appointment id

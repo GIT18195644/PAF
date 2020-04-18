@@ -226,26 +226,26 @@ public class PatientRepository {
 	}
 
 
-	//public void updateAppointment(Appointment a1) {
-		//String sql = "UPDATE appointmentmanagement SET Appointment_type=?, Appointment_date=?, Appointment_time=?, Appointment_fees=?, Patient_id=?, Hospital_id=?, Doctor_id=? WHERE appointment_id=?";
+	public void updateAppointment(Appointment a1) {
+		String sql = "UPDATE appointmentmanagement SET Appointment_type=?, Appointment_date=?, Appointment_time=?, Appointment_fees=?, Patient_id=?, Hospital_id=?, Doctor_id=? WHERE appointment_id=?";
 
-		//try {
-			//PreparedStatement st = con.prepareStatement(sql);
+		try {
+			PreparedStatement st = con.prepareStatement(sql);
 
-			//st.setInt(1, a1.getAppointment_type());
-			//st.setString(2, a1.getAppointment_date());
-			//st.setString(3, a1.getAppointment_time());
-			//st.setString(4, a1.getAppointment_fees());
-			//st.setInt(5, a1.getPatient_id());
-			//st.setInt(6, a1.getHospital_id());
-			//st.setInt(7, a1.getDoctor_id());
+			st.setInt(1, a1.getAppointment_type());
+			st.setString(2, a1.getAppointment_date());
+			st.setString(3, a1.getAppointment_time());
+			st.setString(4, a1.getAppointment_fees());
+			st.setInt(5, a1.getPatient_id());
+			st.setInt(6, a1.getHospital_id());
+			st.setInt(7, a1.getDoctor_id());
 
-			//st.setInt(8, a1.getAppointment_id());
+			st.setInt(8, a1.getAppointment_id());
 
-			//st.executeUpdate();
-		//} catch (Exception e) {
-			//System.out.println(e);
-		//}
-	//}
+			st.executeUpdate();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
 
 }
