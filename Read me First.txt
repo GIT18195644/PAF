@@ -3,7 +3,7 @@ PAF Project
 
 Import Project in Eclipse.
 
-#DataBase : Xampp - PhpMyAdmin
+DataBase : Xampp - PhpMyAdmin
 
 First of all you must create databse in phpmyadmin. The databse name is "ayurwedha"
 
