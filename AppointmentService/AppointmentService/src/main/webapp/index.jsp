@@ -57,8 +57,7 @@ th, td {
 </style>
 
 </head>
-<body>
-		
+<body>	
 	<table>
 		<tr>
 			<td>GET</td>
@@ -175,6 +174,5 @@ th, td {
 			alert("Copied the Clipboard");
 		}
 	</script>
-
 </body>
 </html>
